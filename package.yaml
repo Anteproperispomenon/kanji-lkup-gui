@@ -1,31 +1,38 @@
-name:                monomer-starter
+name:                kanji-lkup-gui
 version:             0.1.0.0
 #synopsis:
 #description:
-homepage:            https://github.com/githubuser/monomer-starter#readme
+homepage:            https://github.com/Anteproperispomenon/kanji-lkup-gui#readme
 license:             BSD3
-author:              Author name here
+author:              David Wilson
 maintainer:          example@example.com
-copyright:           2021 Author name here
+copyright:           2023 David Wilson
 #category:
 extra-source-files:
 - README.md
 
 default-extensions:
 - OverloadedStrings
+- ImportQualifiedPost
 
 dependencies:
   - base >= 4.7 && < 5
+  - containers
   - data-default
   - lens
   - monomer
   - text
   - text-show
 
+library:
+  source-dirs: src
+
 executables:
-  app:
-    source-dirs:      src
+  kanji-lkup-gui-exe:
+    source-dirs:      app
     main:             Main.hs
     ghc-options:
     - -fwarn-incomplete-patterns
     - -threaded
+    dependencies:
+    - kanji-lkup-gui
